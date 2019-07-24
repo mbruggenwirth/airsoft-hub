@@ -1,0 +1,29 @@
+doctype html
+html
+  head
+    title= `${title} | ${h.siteName}`
+    link(rel='stylesheet', href='/dist/style.css')
+    link(rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.css')
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+
+  body
+    block header
+
+      header
+
+    block messages
+      if locals.flashes
+        .inner
+          .flash-messages
+            - const categories = Object.keys(locals.flashes)
+            each category in categories
+              each message in flashes[category]
+                .flash(class=`flash--${category}`)
+                  p.flash__text!= message
+                  button.flash__remove(onClick="this.parentElement.remove()") &times;
+    .content
+      block content
+
+    block scripts
+      script(src="/dist/App.bundle.js")
+      script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeCfxedW16UL0dIXBbbCnR0dtqgVxZUXk&libraries=places" )

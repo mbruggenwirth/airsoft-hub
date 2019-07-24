@@ -1,0 +1,21 @@
+.input {
+    display: block;
+    width: 300px;
+    margin: 20px 0;
+    color: $color-white;
+
+    label {
+        display: block;
+    }
+
+    input {
+        width: 100%;
+        padding: 12px 24px;
+        color: $color-black;
+        font-size: 18px;
+    }
+}
+
+.radio {
+    display: flex;
+}

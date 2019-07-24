@@ -1,0 +1,12 @@
+#map {
+    width: 100vw;
+    height: 100vh;
+}
+
+.marker {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: $color-yellow;
+    cursor: pointer;
+}

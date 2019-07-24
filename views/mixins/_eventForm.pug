@@ -1,0 +1,24 @@
+mixin eventForm(event = {})
+    form(id="event-add" action=`/event/add` method="POST" class="event event--add" autocomplete="off")
+        input(type="hidden" name="geolocation")
+
+        .input
+            label(for="name" autocomplete="false") Name
+            input(type="text" name="name" value=event.name)
+
+        .input
+            label(for="autocomplete")
+            input(type="text" id="autocomplete")
+
+        .input
+            .radio
+                input(type="checkbox" name="type" value="CQB")
+                label(for="type") CQB
+            .radio
+                input(type="checkbox" name="type" value="Millsim")
+                label(for="type") Milsim
+            .radio
+                input(type="checkbox" name="type" value="Open")
+                label(for="type") Open
+
+        input(type="submit" value="Save →" class="button")
